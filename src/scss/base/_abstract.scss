@@ -1,8 +1,9 @@
 @forward "sass:math";
 
-@forward './vars';
-@forward './normalize';
 @forward './fonts';
+@forward './vars';
+@use './normalize';
+@use './common';
 
 @use '../blocks/header';
 @use '../blocks/footer';

@@ -1,0 +1,20 @@
+@use './vars' as *;
+
+.transparent-btn {
+    max-width: rem(150);
+    width: 100%;
+    color: var(--redColor);
+    padding: rem(13) rem(45);
+    
+    border: 1px solid #F53838;
+    border-radius: rem(50);
+    transition: all .5s ease;
+    white-space: nowrap;
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: var(--redColor);
+            color: #fff;
+        }
+    }
+}

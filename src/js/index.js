@@ -1,5 +1,5 @@
 /* ============= Dynamic Adaptive ============= */
-// import "./modules/dynamicAdapt";
+import "./modules/dynamicAdapt";
 
 /* ============= Swiper ============= */
 // import "./modules/swiper";

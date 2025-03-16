@@ -22,11 +22,110 @@ const { format } = require('path');
 const webpack = require('webpack-stream');
 const babel = require('gulp-babel');
 
-gulp.task('clean', function(done) {
-    if(fs.existsSync('./dist')) {
-        return gulp.src('./dist', {read: false})
+
+
+// Functions
+
+const fontsStyle = () => {
+    let fontsFile = `src/scss/base/_fonts.scss`;
+
+    // Якщо передано флаг --rewrite, видаляємо файл
+    if (process.argv.includes('--rewrite') && fs.existsSync(fontsFile)) {
+        fs.unlinkSync(fontsFile);
+    }
+
+    // Перевіряємо, чи існує папка з шрифтами
+    if (fs.existsSync(`dist/fonts/`)) {
+        fs.readdir(`dist/fonts/`, function (err, fontsFiles) {
+            if (err) {
+                console.error("Помилка читання папки шрифтів:", err);
+                return;
+            }
+
+            if (fontsFiles && fontsFiles.length > 0) {
+                // Якщо файл стилів не існує, створюємо його
+                if (!fs.existsSync(fontsFile)) {
+                    fs.writeFileSync(fontsFile, '');
+                    let processedFonts = new Set();
+
+                    fontsFiles.forEach((file) => {
+                        let fontFileName = file.split('.')[0];
+                        if (!processedFonts.has(fontFileName)) {
+                            let fontName = fontFileName.split('-')[0] || fontFileName;
+                            let fontWeight = fontFileName.split('-')[1] || 'regular';
+
+                            // Визначаємо вагу шрифту
+                            switch (fontWeight.toLowerCase()) {
+                                case 'thin': fontWeight = 100; break;
+                                case 'extralight': fontWeight = 200; break;
+                                case 'light': fontWeight = 300; break;
+                                case 'medium': fontWeight = 500; break;
+                                case 'semibold': fontWeight = 600; break;
+                                case 'bold': fontWeight = 700; break;
+                                case 'extrabold':
+                                case 'heavy': fontWeight = 800; break;
+                                case 'black': fontWeight = 900; break;
+                                default: fontWeight = 400;
+                            }
+
+                            // Додаємо CSS для шрифту
+                            fs.appendFileSync(fontsFile, 
+                                `@font-face {
+    font-family: '${fontName}';
+    font-display: swap;
+    src: url("../fonts/${fontFileName}.woff2") format("woff2");
+    font-weight: ${fontWeight};
+    font-style: normal;
+}\r\n`);
+                            processedFonts.add(fontFileName);
+                        }
+                    });
+                } else {
+                    console.log("Файл scss/base/_fonts.scss вже існує. Для оновлення видаліть його вручну або використовуйте флаг --rewrite.");
+                }
+            } else {
+                console.log("Шрифти не знайдено в папці dist/fonts/");
+                if (fs.existsSync(fontsFile)) {
+                    fs.unlinkSync(fontsFile);
+                }
+            }
+        });
+    } else {
+        console.log("Папка dist/fonts/ не існує.");
+    }
+
+    return gulp.src(`src/`);
+};
+
+function cb() { }
+
+// Clean
+
+gulp.task('devClean', function(done) {
+    if(fs.existsSync('./dist/css')) {
+        gulp.src('./dist/css', {read: false})
+            .pipe(clean({force: true}));
+    }
+    if(fs.existsSync('./dist/img')) {
+        gulp.src('./dist/img', {read: false})
             .pipe(clean({force: true}));
     } 
+    if(fs.existsSync('./dist/js')) {
+        gulp.src('./dist/js', {read: false})
+            .pipe(clean({force: true}));
+    }
+    if(fs.existsSync('./dist')) {
+        gulp.src('./dist/*.html', {read: false})
+            .pipe(clean({force: true}));
+    }
+    done();
+});
+
+gulp.task('buildClean', function(done) {
+    if(fs.existsSync('./dist')) {
+        gulp.src('./dist', {read: false})
+            .pipe(clean({force: true}));
+    }
     done();
 });
 
@@ -139,7 +238,7 @@ gulp.task('buildImages', function() {
 
 // Fonts
 
-gulp.task('fonts', async function() {
+gulp.task('buildFonts', async function() {
     const ttf2woff2 = (await import('gulp-ttf2woff2')).default;
     return gulp.src(['./src/fonts/', '!./src/fonts/1x1.ttf'])
         .pipe(plumber({
@@ -159,6 +258,8 @@ gulp.task('fonts', async function() {
         .pipe(ttf2woff2())
         .pipe(gulp.dest('./dist/fonts/'));
 });
+
+gulp.task('devFonts', gulp.series('buildFonts', fontsStyle));
 
 // JS
 
@@ -198,12 +299,12 @@ gulp.task('watch', function() {
 // Starting
 
 gulp.task('default', gulp.series(
-    'clean',
-    gulp.parallel('devHtml', 'devSass', 'devImages', 'js', 'fonts'),
+    'devClean',
+    gulp.parallel('devHtml', 'devSass', 'devImages', 'js'),
     gulp.parallel('server', 'watch')
 ));
 
 gulp.task('build', gulp.series(
-    'clean',
-    gulp.parallel('buildHtml', 'buildSass', 'buildImages', 'js', 'fonts'),
+    'buildClean',
+    gulp.parallel('buildHtml', 'buildSass', 'buildImages', 'js', 'buildFonts'),
 ));
