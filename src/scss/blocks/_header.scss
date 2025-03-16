@@ -1,0 +1,133 @@
+@use '../base/vars' as *;
+
+.logo {
+    z-index: 100;
+
+    img {
+        max-width: rem(20);
+    }
+}
+
+.header {
+    padding: rem(20) 0;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: rem(35);
+        row-gap: rem(10);
+        padding: 0 rem(10);
+    }
+
+    &__list-link {
+        @include text-hover(red);
+    }
+}
+
+// ==============================>>> BURGER <<<==============================
+
+.burger-input {
+    display: none;
+}
+
+.burger-label {
+    display: none;
+}
+
+@media (max-width: em(500)) {
+    .burger-label {
+        position: relative;
+        display: block;
+        width: rem(30);
+        height: rem(20);
+
+        &::before,
+        &::after,
+        span {
+            position: absolute;
+            width: 100%;
+            height: rem(2);
+            background-color: #000;
+
+            transition: all .3s ease;
+        }
+
+        span {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &::before {
+            content: '';
+            top: 0;
+        }
+
+        &::after {
+            content: '';
+            bottom: 0;
+        }
+    }
+
+    .burger-input:checked~.burger-label::after {
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+    }
+
+    .burger-input:checked~.burger-label::before {
+        top: 50%;
+        transform: translateY(-50%) rotate(-45deg);
+    }
+
+    .burger-input:checked~.burger-label span {
+        top: 50%;
+        transform: translateY(-50%) rotate(-45deg);
+    }
+
+    .burger-input:checked ~ .menu__body {
+        left: 0;
+    }
+
+    body:has(.burger-input:checked) {
+        overflow: hidden;
+    }
+
+    .menu {
+        &__body {
+            position: absolute;
+            z-index: -1;
+            left: -100vw;
+            right: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #659dc7;
+            transition: left .3s ease;
+
+            overflow: auto;
+        }
+
+        &__list {
+            margin-top: em(50);
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            column-gap: rem(35);
+            row-gap: rem(25);
+            padding: 0 rem(10);
+
+            font-size: rem(30);
+        }
+    }
+}
