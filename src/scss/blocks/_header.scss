@@ -4,7 +4,7 @@
     z-index: 100;
     max-width: rem(150);
     img {
-        max-width: 100%;
+        width: rem(150);
     }
 }
 
@@ -43,6 +43,7 @@
     &__list {
         display: flex;
         gap: rem(30);
+        align-items: center;
     }
 
     &-small {
@@ -73,7 +74,7 @@
     display: none;
 }
 
-@media (max-width: em(991.98)) {
+@media (max-width: $tablet) {
 
     .burger-label {
         position: relative;
@@ -126,10 +127,10 @@
         }
 
         ~.menu__body {
-            left: 0;
+            transform: translateX(0);
 
             &::before {
-                left: 0;
+                transform: translateX(0);
             }
         }
 
@@ -142,13 +143,14 @@
     .menu {
         &__body {
             position: fixed;
-            left: -100vw;
+            left: 0;
+            transform: translateX(-120vw);
             right: 0;
             top: 0;
             width: 100vw;
             height: 100vh;
             background-color: #fff;
-            transition: left .5s ease;
+            transition: transform .5s ease;
 
             overflow: auto;
             -ms-overflow-style: none;
@@ -164,7 +166,7 @@
                 position: fixed;
                 width: 100%;
                 height: rem(70);
-                left: -100%;
+                transform: translateX(-120vw);
                 top: 0;
                 background-color: #fff;
             }

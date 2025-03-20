@@ -21,6 +21,10 @@ $maxWidth: 1440;
 $maxWidthContainer: 1140;
 $containerWidth: $maxWidthContainer + 30;
 
+$tablet: em(991.98);
+$mobile: em(767.98);
+$mobileSmall: em(479.98);
+
 :root {
     --fontFamily: 'Rubik', sans-serif;
     --fontSize: #{rem(16)};

@@ -1,4 +1,106 @@
 /* IMPORTS */
 @use './base/abstract' as *;
+@use "sass:math";
 
 /* SCRIPT */
+
+.about {
+    @include adaptiveValue("margin-top", 90, 10);
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: rem(40);
+
+        @media(max-width: $tablet) {
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
+        }
+    }
+
+    &__content {
+        flex: 0 1 rem(550);
+    }
+
+    &__title {
+        margin-bottom: rem(20);
+        @include adaptiveValue("font-size", 50, 34);
+    }
+
+    &__text {
+        margin-bottom: rem(50);
+
+        @media(max-width: $mobileSmall) {
+            margin-bottom: rem(20);
+        }
+    }
+
+    &__btn {}
+
+    &__media {
+        flex: 0 1 rem(612);
+
+        img {
+            max-width: 100%;
+        }
+
+        @media(max-width: $tablet) {
+            margin-top: rem(33);
+        }
+
+        @media(max-width: $mobileSmall) {
+            display: none;
+        }
+    }
+
+    &__stats {
+        margin-top: rem(103);
+        border-radius: rem(10);
+        box-shadow: 0 10px 20px rgba(13, 16, 37, 0.06);
+    }
+
+    &__stats-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(rem(200), 1fr));
+    }
+
+    &__stats-item {
+        display: grid;
+        grid-template-columns: rem(55) 1fr;
+        gap: rem(37);
+        align-items: center;
+        position: relative;
+        @include adaptiveValue("padding-left", 113, 10);
+        @include adaptiveValue("padding-top", 68, 10);
+        @include adaptiveValue("padding-bottom", 68, 10);
+        @include adaptiveValue("padding-right", 129, 10);
+
+        &:not(:last-child) {
+            &::after {
+                content: "";
+                position: absolute;
+                width: rem(2);
+                height: 63%;
+                background-color: #eeeff2;
+                right: 0;
+            }
+        }
+    }
+
+    &-item-img {
+        max-width: rem(55);
+    }
+
+    &-item-text {
+        &:nth-child(1) {
+            
+        }
+
+        &:nth-child(2) {
+            font-size: rem(20);
+            line-height: math.div(30 , 20);
+        }
+    }
+}

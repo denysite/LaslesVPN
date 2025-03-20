@@ -1,11 +1,11 @@
 @use './vars' as *;
+@use "sass:math";
 
 .transparent-btn {
-    max-width: rem(150);
-    width: 100%;
+    display: inline-block;
     color: var(--redColor);
     padding: rem(13) rem(45);
-    
+
     border: 1px solid #F53838;
     border-radius: rem(50);
     transition: all .5s ease;
@@ -17,4 +17,36 @@
             color: #fff;
         }
     }
+}
+
+.red-btn {
+    color: #fff;
+    background-color: var(--redColor);
+    border-radius: rem(10);
+    padding: rem(17) rem(79);
+    font-weight: 700;
+    box-shadow: 0 20px 30px rgba(247, 50, 50, 0.3);
+    transition: all .5s ease;
+
+    @media (hover: hover) {
+        &:hover {
+            box-shadow: 0 20px 40px rgba(247, 50, 50, 0.5);
+        }
+    }
+}
+
+.title {
+    color: #0B132A;
+    font-weight: 500;
+    line-height: math.div(70 , 35);
+    font-size: rem(35);
+    line-height: math.div(50, 35);
+
+    span {
+        font-weight: 700;
+    }
+}
+
+.text-medium {
+    font-weight: 500;
 }
