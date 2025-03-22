@@ -39,8 +39,9 @@
     color: #0B132A;
     font-weight: 500;
     line-height: math.div(70 , 35);
-    font-size: rem(35);
     line-height: math.div(50, 35);
+
+    @include adaptiveValue("font-size", 35, 24);
 
     span {
         font-weight: 700;
