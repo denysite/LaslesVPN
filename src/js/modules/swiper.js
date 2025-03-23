@@ -1,22 +1,28 @@
 import Swiper from 'swiper';
-import { Autoplay, FreeMode } from 'swiper/modules';
+import { Autoplay, FreeMode, Navigation, Pagination } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/autoplay';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
-const swiper = new Swiper('.partners__slider', {
+const partners = new Swiper('.partners__slider', {
     modules: [Autoplay, FreeMode],
-    observer: true,
-    observeParents: true,
-    slidesPerView: "auto",
-    spaceBetween: 200,
-    speed: 500,
+    slidesPerView: 'auto',
+    spaceBetween: 100,
+    speed: 2000,
     loop: true,
+    freeMode: true,
     autoplay: {
-        delay: 500,
-        disableOnInteraction: false,
+        delay: 0,
     },
     
+    // Брейкпоинты
+    // breakpoints: {
+    //     600: {
+    //         slidesPerView: 3,
+    //     },
+    // },
 
     //touchRatio: 0,
     //simulateTouch: false,
@@ -57,28 +63,58 @@ const swiper = new Swiper('.partners__slider', {
     },
     */
 
-    // Брейкпоинты
+    
+    // События
     /*
-    breakpoints: {
-        320: {
-            slidesPerView: 1,
-            spaceBetween: 0,
-            autoHeight: true,
-        },
-        768: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-        },
-        992: {
-            slidesPerView: 3,
-            spaceBetween: 20,
-        },
-        1268: {
-            slidesPerView: 4,
-            spaceBetween: 30,
-        },
+    on: {
+
+    }
+    */
+});
+
+const testimonials = new Swiper('.testimonials__slider', {
+    modules: [Navigation, Pagination],
+    slidesPerView: 'auto',
+    spaceBetween: 50,
+    speed: 800,
+    loop: true,
+
+    //touchRatio: 0,
+    //simulateTouch: false,
+    //loop: true,
+    //preloadImages: false,
+    //lazy: true,
+
+    /*
+    // Эффекты
+    effect: 'fade',
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
     },
     */
+
+    // Пагинация
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+
+    // Скроллбар
+    /*
+    scrollbar: {
+        el: '.swiper-scrollbar',
+        draggable: true,
+    },
+    */
+
+    // Кнопки "влево/вправо"
+    navigation: {
+        prevEl: '.swiper-button-prev',
+        nextEl: '.swiper-button-next',
+    },
+
+    
     // События
     /*
     on: {

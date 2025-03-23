@@ -95,3 +95,17 @@ h6 {
 	margin: 0 auto;
 	padding: 0 15px;
 }
+
+blockquote {
+	position: relative;
+
+	&::before {
+		content: "\" ";
+		font-style: italic;
+	}
+
+	&::after {
+		content: "\".";
+		font-style: italic;
+	}
+}
