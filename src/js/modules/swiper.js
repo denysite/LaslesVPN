@@ -1,16 +1,22 @@
 import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
+import { Autoplay, FreeMode } from 'swiper/modules';
 
 import 'swiper/css';
-import 'swiper/css/navigation';
+import 'swiper/css/autoplay';
 
-const swiper = new Swiper('.swiper', {
-    modules: [Navigation],
+const swiper = new Swiper('.partners__slider', {
+    modules: [Autoplay, FreeMode],
     observer: true,
     observeParents: true,
-    slidesPerView: 1,
-    spaceBetween: 0,
-    speed: 800,
+    slidesPerView: "auto",
+    spaceBetween: 200,
+    speed: 500,
+    loop: true,
+    autoplay: {
+        delay: 500,
+        disableOnInteraction: false,
+    },
+    
 
     //touchRatio: 0,
     //simulateTouch: false,
@@ -44,10 +50,12 @@ const swiper = new Swiper('.swiper', {
     */
 
     // Кнопки "влево/вправо"
+    /*
     navigation: {
         prevEl: '.swiper-button-prev',
         nextEl: '.swiper-button-next',
     },
+    */
 
     // Брейкпоинты
     /*
@@ -72,7 +80,9 @@ const swiper = new Swiper('.swiper', {
     },
     */
     // События
+    /*
     on: {
 
     }
+    */
 });

@@ -25,12 +25,12 @@
     border-radius: rem(10);
     padding: rem(17) rem(79);
     font-weight: 700;
-    box-shadow: 0 20px 30px rgba(247, 50, 50, 0.3);
+    box-shadow: 0 rem(20) rem(30) rgba(247, 50, 50, 0.3);
     transition: all .5s ease;
 
     @media (hover: hover) {
         &:hover {
-            box-shadow: 0 20px 40px rgba(247, 50, 50, 0.5);
+            box-shadow: 0 rem(20) rem(40) rgba(247, 50, 50, 0.5);
         }
     }
 }

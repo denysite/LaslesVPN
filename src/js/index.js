@@ -2,7 +2,7 @@
 import "./modules/dynamicAdapt";
 
 /* ============= Swiper ============= */
-// import "./modules/swiper";
+import "./modules/swiper";
 
 /* ============= Script ============= */
 
