@@ -1,0 +1,45 @@
+@use "../base/vars" as *;
+
+.footer {
+    padding: rem(180) 0 rem(100);
+    background-color: #F8F8F8;
+    
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        gap: rem(15);
+    }
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        gap: rem(25);
+    }
+
+    &__img {
+    }
+
+    &__text {
+        max-width: rem(340);
+    }
+
+    &__socials {
+        display: flex;
+        gap: rem(20);
+    }
+
+    &__socials-item {}
+
+    &__left-owner {
+        color: #AFB5C0;
+    }
+
+    &__right {}
+
+    &__right-list {}
+
+    &__right-item {}
+
+    &__right-title {}
+}

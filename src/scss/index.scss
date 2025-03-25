@@ -211,7 +211,6 @@
     &__list {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(rem(240), 1fr));
-        justify-items: space-between;
         gap: rem(10);
         align-items: stretch;
     }
@@ -657,11 +656,10 @@
         color: var(--titleColor);
     }
 
-
-    .swiper-pagination {}
-
+    
+    .swiper-pagination {}   
+    
     .swiper-button-prev {}
-
     .swiper-button-next {}
 
 }
