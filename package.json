@@ -37,6 +37,6 @@
     "last 5 versions"
   ],
   "dependencies": {
-    "swiper": "^11.2.5"
+    "@splidejs/splide": "^4.1.4"
   }
 }

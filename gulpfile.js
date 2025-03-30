@@ -293,7 +293,7 @@ gulp.task('watch', function() {
     gulp.watch(['src/**/*.html'], gulp.series('devHtml')).on('change', browserSync.reload);
     gulp.watch(['src/scss/**/*.scss'], gulp.series('devSass')).on('change', browserSync.reload);
     gulp.watch(['src/img/**/*'], gulp.series('devImages')).on('change', browserSync.reload);
-    gulp.watch(['src/js/**/*.js'], gulp.series('js')).on('change', browserSync.reload);
+    gulp.watch(['src/js/**/*.js'], gulp.series('js'));
 });
 
 // Starting

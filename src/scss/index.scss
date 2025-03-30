@@ -579,6 +579,8 @@
 }
 
 .testimonials {
+    padding-bottom: rem(180);
+    position: relative;
     @include adaptiveValue("margin-top", 130, 50);
 
     &__container {}
@@ -597,16 +599,100 @@
         margin-bottom: rem(60);
     }
 
-    &__slider {}
+    &__splide {
+        .splide__control {
+            margin-top: rem(60);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    &__wrapper {}
+        .splide__pagination {
+            position: relative;
+            padding: 0;
+            bottom: 0;
+            justify-self: start;
+            align-items: center;
+            gap: rem(15);
 
-    &__slide {
+            li {
+                line-height: normal;
+                display: flex;
+                align-items: center;
+            }
 
-        max-width: rem(400);
-        width: 100%;
+            &__page {
+                opacity: 1;
+                margin: auto 0;
+
+                &.is-active {
+                    transform: scale(1);
+                    width: rem(45);
+                    height: rem(15);
+                    background-color: var(--redColor);
+                    border-radius: rem(10);
+                }
+            }
+        }
+
+        .splide__arrows {
+            display: flex;
+            justify-content: end;
+            gap: rem(20);
+        }
+
+        .splide__arrow {
+            position: relative;
+            transform: translateY(0);
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            display: inline-block;
+            padding: rem(15);
+            max-width: rem(60);
+            aspect-ratio: 1 / 1;
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            transition: all .5s ease;
+
+            &--next {
+                background-color: var(--redColor);
+
+                @media (hover: hover) {
+                &:hover {
+                    box-shadow: 0 rem(10) rem(20) rgba(245, 56, 56, .35);
+                    
+                    &:not(:disabled) {
+                        opacity: 1;
+                    }
+                }
+                }
+            }
+
+            &--prev {
+                background-color: #fff;
+                border: rem(2) solid var(--redColor);
+                transform: rotate(180deg);
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+
+    &__splide-list {
+        .is-active {
+            border: rem(2) solid var(--redColor);
+        }
+    }
+
+    &__splide-slide {
+        flex: 0 1 rem(400);
         padding: rem(30);
-        border: rem(2) solid var(--redColor);
+        border: rem(2) solid #DDDDDD;
         border-radius: rem(10);
     }
 
@@ -656,10 +742,65 @@
         color: var(--titleColor);
     }
 
-    
-    .swiper-pagination {}   
-    
+
+    .swiper-pagination {}
+
     .swiper-button-prev {}
+
     .swiper-button-next {}
 
+}
+.subscribe {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(50%);
+    padding: 0 rem(15);
+    
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: rem(15);
+
+        padding: rem(58) rem(70);
+        max-width: var(--containerWidth);
+        width: 100%;
+        background-color: #fff;
+
+        @media(max-width: $mobile) {
+            flex-direction: column;
+        }
+    }
+
+    &__left {
+        flex: 0 1 rem(410);
+
+        @media(max-width: $mobile) {
+            flex: 1 1 auto;
+        }
+    }
+
+    &__title {}
+
+    &__subtitle {}
+
+    &__btn {
+        text-wrap: nowrap;
+        max-width: rem(250);
+
+        @media(max-width: $mobile) {
+            max-width: 100%;
+            width: 100%;
+        }
+        
+        button {
+            padding: rem(17) rem(65);
+            width: 100%;
+
+            @media(max-width: $mobile) {
+                padding: rem(17) 0;
+            }
+        }
+    }
 }
