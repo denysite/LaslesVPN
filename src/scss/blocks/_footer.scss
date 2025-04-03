@@ -67,7 +67,6 @@
 
     &__right {
         display: flex;
-        gap: rem(126);
         @include adaptiveValue("gap", 126, 15);
         
         @media(max-width: $mobile) {

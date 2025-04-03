@@ -17,7 +17,7 @@
 
         <main class="main">
 
-            <section class="about">
+            <section class="about" id="about">
                 <div class="about__container container">
                     <div class="about__top">
                         <div class="about__content">
@@ -72,7 +72,7 @@
                 </div>
             </section>
 
-            <section class="features">
+            <section class="features" id="features">
                 <div class="features__container container">
                     <div class="features__media">
                         <img src="./img/features/media.svg" alt="">
@@ -94,7 +94,7 @@
                 </div>
             </section>
 
-            <section class="pricing">
+            <section class="pricing" id="pricing">
                 <div class="pricing__container container">
                     <h2 class="pricing__title title">Choose Your Plan</h2>
 
@@ -160,7 +160,7 @@
                 </div>
             </section>
 
-            <section class="locations">
+            <section class="locations" id="locations">
                 <div class="locations__container container">
                     <h2 class="locations__title title">Huge Global Network of Fast VPN</h2>
 
@@ -203,34 +203,43 @@
                 </div>
             </section>
 
-            <section class="partners">
+            <section class="partners" id="partners">
                 <div class="partners__container container">
-                    <div class="partners__slider swiper">
-                        <div class="partners__wrapper swiper-wrapper">
-                            <div class="partners__slide swiper-slide">
-                                <img src="./img/partners/netflix.svg" alt="">
-                            </div>
-                            <div class="partners__slide swiper-slide">
-                                <img src="./img/partners/reddit.svg" alt="">
-                            </div>
-                            <div class="partners__slide swiper-slide">
-                                <img src="./img/partners/amazon.svg" alt="">
-                            </div>
-                            <div class="partners__slide swiper-slide">
-                                <img src="./img/partners/discord.svg" alt="">
-                            </div>
-                            <div class="partners__slide swiper-slide">
-                                <img src="./img/partners/spotify.svg" alt="">
-                            </div>
-                            <div class="partners__slide swiper-slide">
-                                <img src="./img/partners/amazon.svg" alt="">
-                            </div>
+                    <div class="partners__splide splide">
+                        <div class="partners__splide-track splide__track">
+                            <ul class="partners__splide-list splide__list">
+                                <li class="partners__splide-slide splide__slide">
+                                    <div class="partners__slide-wrapper">
+                                        <img src="./img/partners/netflix.svg" alt="">
+                                    </div>
+                                </li>
+                                <li class="partners__splide-slide splide__slide">
+                                    <div class="partners__slide-wrapper">
+                                        <img src="./img/partners/reddit.svg" alt="">
+                                    </div>
+                                </li>
+                                <li class="partners__splide-slide splide__slide">
+                                    <div class="partners__slide-wrapper">
+                                        <img src="./img/partners/amazon.svg" alt="">
+                                    </div>
+                                </li>
+                                <li class="partners__splide-slide splide__slide">
+                                    <div class="partners__slide-wrapper">
+                                        <img src="./img/partners/discord.svg" alt="">
+                                    </div>
+                                </li>
+                                <li class="partners__splide-slide splide__slide">
+                                    <div class="partners__slide-wrapper">
+                                        <img src="./img/partners/spotify.svg" alt="">
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section class="testimonials">
+            <section class="testimonials" id="testimonials">
                 <div class="testimonials__container container">
                     <h2 class="testimonials__title title">Trusted by Thousands of Happy Customer</h2>
 
@@ -333,7 +342,9 @@
 
                         
                         <div class="splide__control">
-                            <ul class="splide__pagination"></ul>
+                            <ul class="splide__pagination">
+                                
+                            </ul>
 
                             <div class="splide__arrows">
                                 <button class="splide__arrow splide__arrow--prev">
