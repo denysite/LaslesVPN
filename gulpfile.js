@@ -16,7 +16,7 @@ const csso = require('gulp-csso');
 const htmlclean = require('gulp-htmlclean');
 const webp = require('gulp-webp');
 // const webpHtml = require('gulp-webp-html');
-const webpCss = require('gulp-webp-css');
+// const webpCss = require('gulp-webp-css');
 const { format } = require('path');
 
 const webpack = require('webpack-stream');
@@ -198,7 +198,6 @@ gulp.task('buildSass', function() {
         .pipe(autorpefixer())
         .pipe(groupMedia())
         .pipe(sass())
-        .pipe(webpCss())
         .pipe(csso())
         .pipe(gulp.dest('./dist/css/'))
 });

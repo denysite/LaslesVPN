@@ -189,7 +189,9 @@
             left: 0;
             top: 50%;
             transform: translateY(-50%);
-            background: url(../img/features/list-check.svg) no-repeat center;
+            background-image: url('../img/features/list-check.svg');
+            background-repeat: no-repeat;
+            background-position: center;
             background-size: contain;
             width: rem(24);
             height: rem(24);
@@ -292,7 +294,9 @@
                 left: 0;
                 top: 50%;
                 transform: translateY(-50%);
-                background: url('../img/pricing/check.svg') no-repeat center;
+                background-image: url('../img/pricing/check.svg');
+                background-repeat: no-repeat;
+                background-position: center;
                 background-size: contain;
             }
         }
