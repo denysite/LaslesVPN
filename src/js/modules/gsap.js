@@ -2,7 +2,6 @@ import { gsap } from "gsap";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const tl = gsap.timeline();
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.from('.locations__map-pin', {

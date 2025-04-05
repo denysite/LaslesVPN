@@ -376,10 +376,10 @@
     &__map-pin {
         z-index: 10;
         aspect-ratio: 1 / 1;
+        border-radius: 50%;
 
         position: absolute;
-        background: url('../img/locations/pin.svg') no-repeat center;
-        background-size: contain;
+        object-fit: contain;
 
         &.locations-pin-1 {
             width: percent(20, 1060);
@@ -569,7 +569,7 @@
 
     &__container {}
 
-    &__splide {
+    &__slider {
 
         &-list {
             position: relative;
@@ -586,7 +586,6 @@
                 animation-duration: $animationDuration;
                 animation-iteration-count: infinite;
                 animation-timing-function: linear;
-                // animation-play-state: paused;
                 
                 &:nth-child(1) {
                     animation-delay: calc($animationDuration / 5 * (5 - 1) * -1);
@@ -606,12 +605,6 @@
             }
         }
     }
-
-    &__splide-track {}
-
-    &__splide-list {}
-
-    &__splide-slide {}
 
     &__slide-wrapper {
         max-width: rem(140);

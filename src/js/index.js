@@ -2,7 +2,6 @@
 import "./modules/dynamicAdapt";
 
 /* ============= Swiper ============= */
-// import "./modules/splide";
 import "./modules/swiper";
 
 /* ============= Spollers ============= */

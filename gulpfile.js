@@ -15,7 +15,7 @@ const autorpefixer = require('gulp-autoprefixer');
 const csso = require('gulp-csso');
 const htmlclean = require('gulp-htmlclean');
 const webp = require('gulp-webp');
-const webpHtml = require('gulp-webp-html');
+// const webpHtml = require('gulp-webp-html');
 const webpCss = require('gulp-webp-css');
 const { format } = require('path');
 
@@ -150,7 +150,7 @@ gulp.task('devHtml', function() {
 });
 
 gulp.task('buildHtml', function() {
-    return gulp.src(['src/html/**/*.html'])
+    return gulp.src(['src/html/*.html'])
         .pipe(changed('./dist/'), { hasChanged: changed.compareContents })
         .pipe(plumber({
             errorHandler: notify.onError({
@@ -163,7 +163,6 @@ gulp.task('buildHtml', function() {
             prefix: '@@',
             basepath: '@file'
         }))
-        .pipe(webpHtml())
         .pipe(htmlclean())
         .pipe(gulp.dest('./dist/'))
 });
