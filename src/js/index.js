@@ -2,12 +2,15 @@
 import "./modules/dynamicAdapt";
 
 /* ============= Swiper ============= */
-import "./modules/splide";
+// import "./modules/splide";
 import "./modules/swiper";
 
 /* ============= Spollers ============= */
 import { spollers } from "./modules/spollers";
 spollers();
+
+/* ============= GSAP ============= */
+import "./modules/gsap";
 
 /* ============= Script ============= */
 

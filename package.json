@@ -39,6 +39,7 @@
   "dependencies": {
     "@splidejs/splide": "^4.1.4",
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",
+    "gsap": "^3.12.7",
     "swiper": "^11.2.6"
   }
 }

@@ -53,6 +53,7 @@
 
     &__list-link {
         @include text-hover(var(--redColor));
+        
     }
 }
 
