@@ -1,6 +1,11 @@
 @use './vars' as *;
 @use "sass:math";
 
+.header-end {
+    margin-top: rem(-30);
+    padding-top: rem(30);
+}
+
 .transparent-btn {
     display: inline-block;
     color: var(--redColor);

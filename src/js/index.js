@@ -3,6 +3,11 @@ import "./modules/dynamicAdapt";
 
 /* ============= Swiper ============= */
 import "./modules/splide";
+import "./modules/swiper";
+
+/* ============= Spollers ============= */
+import { spollers } from "./modules/spollers";
+spollers();
 
 /* ============= Script ============= */
 
@@ -12,7 +17,7 @@ function ChangeAboutItemsAfter() {
     const columnCount = getComputedStyle(grid).gridTemplateColumns.split(' ').length;
     const aboutWrappers = document.querySelectorAll('.about-item-wrapper');
 
-    if(Math.ceil(items.length / columnCount) > 1) {
+    if (Math.ceil(items.length / columnCount) > 1) {
         aboutWrappers.forEach(item => {
             item.style = `justify-content: start;`
         })
@@ -33,6 +38,17 @@ function ChangeAboutItemsAfter() {
 
 document.addEventListener('DOMContentLoaded', (e) => {
     ChangeAboutItemsAfter();
+
+    document.querySelectorAll('.menu__list-link').forEach(link => {
+        link.addEventListener('click', () => {
+            const burgerInput = document.querySelector('.burger-input');
+
+            if (burgerInput && burgerInput.checked) {
+                burgerInput.checked = false;
+                document.body.style.overflow = '';
+            }
+        });
+    });
 })
 
 window.addEventListener('resize', (e) => {

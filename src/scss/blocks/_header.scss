@@ -3,19 +3,38 @@
 .logo {
     z-index: 100;
     max-width: rem(150);
+
     img {
         width: rem(150);
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            animation-name: logo-hover;
+            animation-duration: 1s;
+            animation-timing-function: ease;
+        }
     }
 }
 
 .header {
     padding: rem(20) 0;
+    background-color: #fff;
+    box-shadow: 0 rem(10) rem(10) rgba(13, 16, 37, 0.06);
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 100;
 
     &__inner {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: #fff;
+    }
+
+    @media(max-width: $tablet) {
+        position: static;
     }
 }
 
@@ -133,7 +152,6 @@
                 transform: translateX(0);
             }
         }
-
     }
 
     body:has(.burger-input:checked) {
@@ -207,5 +225,23 @@
         &-big {
             display: none;
         }
+    }
+}
+
+@keyframes logo-hover {
+    0% {
+        transform: rotate(0);
+    }
+
+    33% {
+        transform: rotate(20deg);
+    }
+
+    66% {
+        transform: rotate(-20deg);
+    }
+
+    100% {
+        transform: rotate(0);
     }
 }

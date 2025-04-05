@@ -5,7 +5,10 @@
 /* SCRIPT */
 
 .about {
-    @include adaptiveValue("margin-top", 90, 10);
+    
+    &__container {
+        @include adaptiveValue("margin-top", 180, 40);
+    }
 
     &__top {
         display: flex;
@@ -125,13 +128,14 @@
 }
 
 .features {
-    @include adaptiveValue("margin-top", 90, 50);
-    @include adaptiveValue("margin-bottom", 130, 30);
 
     &__container {
         display: flex;
         justify-content: space-between;
         gap: rem(10);
+
+        @include adaptiveValue("padding-bottom", 130, 30);
+        @include adaptiveValue("margin-top", 90, 50);
 
         @media(max-width: $tablet) {
             flex-wrap: wrap;
@@ -196,16 +200,24 @@
 }
 
 .pricing {
-    background: linear-gradient(rgba(250, 250, 250, 1), rgba(255, 255, 255, 1));
-    @include adaptiveValue("padding-top", 80, 50);
+    
+    &__wrapper {
+        background: linear-gradient(rgba(250, 250, 250, 1), rgba(255, 255, 255, 1));
+    }
 
+    &__container {
+        @include adaptiveValue("padding-top", 80, 50);
+    }
+    
     &__title {
         text-align: center;
     }
 
     &__subtitle {
-        margin: rem(20) 0 rem(60);
+        margin: rem(20) 0 0;
         text-align: center;
+
+        @include adaptiveValue("margin-bottom", 60, 20);
     }
 
     &__list {
@@ -248,10 +260,7 @@
         &__img {
             max-width: rem(145);
             margin-inline: auto;
-
-            img {
-                max-width: 100%;
-            }
+            width: 100%;
         }
 
         &__title {
@@ -562,15 +571,13 @@
 
     &__splide-track {}
 
-    &__splide-list {
-    }
+    &__splide-list {}
 
-    &__splide-slide {
-    }
-    
+    &__splide-slide {}
+
     &__slide-wrapper {
         max-width: rem(140);
-        
+
         img {
             max-width: 100%;
         }
@@ -582,9 +589,10 @@
 .testimonials {
     padding-bottom: rem(180);
     position: relative;
-    @include adaptiveValue("margin-top", 130, 50);
-
-    &__container {}
+    
+    &__container {
+        @include adaptiveValue("margin-top", 130, 50);
+    }
 
     &__title {
         max-width: rem(448);
@@ -600,170 +608,162 @@
         margin-bottom: rem(60);
     }
 
-    &__splide {
-        .splide__control {
+    &__swiper {
+     
+        &-wrapper {
+
+        }
+        
+        &-control {
+            position: relative;
+            margin-top: rem(60);
+
             display: flex;
             justify-content: space-between;
             align-items: center;
-
-            @include adaptiveValue("margin-top", 60, 20);
+            gap: rem(20);
         }
 
-        .splide__pagination {
-            position: relative;
-            padding: 0;
-            bottom: 0;
-            justify-self: start;
-            align-items: center;
-            gap: rem(15);
-
-            li {
-                line-height: normal;
-                display: flex;
-                align-items: center;
-            }
-
-            &__page {
-                opacity: 1;
-                margin: auto 0;
-                background-color: #DDE0E4;
-                width: rem(15);
-                height: rem(15);
-
-                &.is-active {
-                    transform: scale(1);
-                    animation-name: splide-paggination;
-                    animation-duration: .5s;
-                    animation-timing-function: ease-in-out;
-                    animation-fill-mode: forwards;
-                }
-            }
-        }
-
-        .splide__arrows {
+        &-buttons {
             display: flex;
-            justify-content: end;
-            @include adaptiveValue("gap", 20, 10);
+            gap: rem(20);
         }
+    }
 
-        .splide__arrow {
-            position: relative;
-            transform: translateY(0);
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            display: inline-block;
-            max-width: rem(60);
-            aspect-ratio: 1 / 1;
-            width: 100%;
-            height: 100%;
-            opacity: 1;
+    &__slide {
+        max-width: rem(400);
+        flex: 0 1 100%;
+
+        padding: rem(30);
+
+        display: flex;
+        flex-direction: column;
+        gap: rem(10);
+
+        border: rem(2) solid #ddd;
+        border-radius: rem(10);
+
+        &.swiper-slide-active {
+            border-color: var(--redColor);
+        }
+    }
+
+    &__pagination {
+        display: flex;
+        gap: rem(15);
+        flex-wrap: wrap;
+
+        span {
+            width: rem(15);
+            height: rem(15);
+            border-radius: 50%;
+            background-color: #DDE0E4;
             transition: all .5s ease;
 
-            @include adaptiveValue("padding-top", 15, 8);
-            @include adaptiveValue("padding-bottom", 15, 8);
-            @include adaptiveValue("padding-left", 15, 8);
-            @include adaptiveValue("padding-right", 15, 8);
-
-            &--next {
+            &.swiper-pagination-bullet-active {
+                width: rem(45);
                 background-color: var(--redColor);
+                border-radius: rem(10);
 
-                @media (hover: hover) {
-                    &:hover {
-                        box-shadow: 0 rem(10) rem(20) rgba(245, 56, 56, .35);
-
-                        &:not(:disabled) {
-                            opacity: 1;
-                        }
-                    }
-                }
+                animation-name: swiper-pagination;
+                animation-timing-function: ease;
+                animation-duration: .5s;
             }
+        }
+    }
 
-            &--prev {
-                background-color: #fff;
-                border: rem(2) solid var(--redColor);
+    &__button-prev, &__button-next {
+        border-radius: 50%;
+        border: rem(2) solid var(--redColor);
+        padding: rem(15);
+        cursor: pointer;
 
+        &.swiper-button-disabled {
+            opacity: .5;
+            cursor: default;
+        }
+
+        img {
+            width: rem(30);
+            aspect-ratio: 1 / 1;
+        }
+    }
+
+    &__button-next {
+        background-color: var(--redColor);
+    }
+
+    .slide {
+
+        &__wrapper {
+
+            &-top {
                 display: flex;
-                justify-content: center;
+                gap: rem(10);
                 align-items: center;
             }
+
+            &-blockquote {
+                color: var(--titleColor);
+            }
         }
     }
 
-    &__splide-list {
-        .is-active {
-            border: rem(2) solid var(--redColor);
+    .wrapper {
+
+        &__top {
+
+            &-img {
+                width: rem(50);
+                aspect-ratio: 1 / 1;
+            }
+
+            &-info {}
+
+            &-name {
+                font-size: rem(18);
+                font-weight: 500;
+                color: var(--titleColor);
+            }
+
+            &-location {
+                font-size: rem(14);
+            }
+
+            &-rating {
+                margin-left: auto;
+                color: var(--titleColor);
+                padding-right: rem(27);
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: rem(16);
+                    aspect-ratio: 1 / 1;
+
+                    background-image: url('../img/testimonials/star.svg');
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center;
+
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
         }
     }
-
-    &__splide-slide {
-        max-width: 100%;
-        flex: 0 1 rem(400);
-        padding: rem(30);
-        border: rem(2) solid #DDDDDD;
-        border-radius: rem(10);
-    }
-
-    &__slide-top {
-        display: flex;
-        gap: rem(20);
-        align-items: center;
-    }
-
-    &__slide-img {
-        border-radius: 50%;
-    }
-
-    &__slide-info {
-        flex-grow: 1;
-    }
-
-    &__slide-name {
-        font-weight: 500;
-        font-size: rem(18);
-        color: var(--titleColor);
-    }
-
-    &__slide-location {
-        font-size: rem(14);
-    }
-
-    &__slide-rating {
-        color: var(--titleColor);
-        padding-right: rem(26);
-        position: relative;
-
-        &::after {
-            content: "";
-            position: absolute;
-            background: url('../img/testimonials/star.svg') no-repeat center;
-            width: rem(16);
-            height: rem(16);
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-    }
-
-    &__slide-quote {
-        margin-top: 20px;
-        color: var(--titleColor);
-    }
-
-
-    .swiper-pagination {}
-
-    .swiper-button-prev {}
-
-    .swiper-button-next {}
-
 }
+
 
 .subscribe {
     position: absolute;
     bottom: 0;
-    transform: translateY(50%);
+    right: 50%;
+    transform: translate(50%, 50%);
+    max-width: var(--containerWidth);
+    width: 100%;
 
 
     &__container {
@@ -795,8 +795,7 @@
         }
     }
 
-    &__title {
-    }
+    &__title {}
 
     &__subtitle {
         margin-top: rem(20);
@@ -822,7 +821,7 @@
     }
 }
 
-@keyframes splide-paggination {
+@keyframes swiper-pagination {
     0% {
         background-color: #DDE0E4;
         width: rem(15);

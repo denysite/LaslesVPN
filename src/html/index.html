@@ -3,7 +3,7 @@
 
 <head>
     @@include('./blocks/head.html', {
-    "title": "Home page"
+    "title": "LaslesVPN"
     })
 
     <link rel="stylesheet" href="css/index.css">
@@ -17,7 +17,7 @@
 
         <main class="main">
 
-            <section class="about" id="about">
+            <section class="about header-end" id="about">
                 <div class="about__container container">
                     <div class="about__top">
                         <div class="about__content">
@@ -72,7 +72,7 @@
                 </div>
             </section>
 
-            <section class="features" id="features">
+            <section class="features header-end" id="features">
                 <div class="features__container container">
                     <div class="features__media">
                         <img src="./img/features/media.svg" alt="">
@@ -94,69 +94,66 @@
                 </div>
             </section>
 
-            <section class="pricing" id="pricing">
-                <div class="pricing__container container">
-                    <h2 class="pricing__title title">Choose Your Plan</h2>
-
-                    <p class="pricing__subtitle">Let's choose the package that is best for you and explore it happily
-                        and cheerfully.</p>
-
-                    <ul class="pricing__list">
-                        <li class="pricing__list-item pricing-item">
-                            <div class="pricing-item-content">
-                                <img src="./img/pricing/free.svg" alt="" class="pricing-item__img">
-                                <h4 class="pricing-item__title title">Free Plan</h4>
-                                <ul class="pricing-item__list">
-                                    <li class="pricing-item__list-item">Unlimited Bandwitch</li>
-                                    <li class="pricing-item__list-item">Encrypted Connection</li>
-                                    <li class="pricing-item__list-item">No Traffic Logs</li>
-                                    <li class="pricing-item__list-item">Works on All Devices</li>
-                                </ul>
-                            </div>
-
-                            <div class="pricing-item-footer">
-                                <h3 class="pricing-item__price title">Free</h3>
-                                <button class="pricing-item__btn">Select</button>
-                            </div>
-                        </li>
-                        <li class="pricing__list-item pricing-item">
-                            <div class="pricing-item-content">
-                                <img src="./img/pricing/standard.svg" alt="" class="pricing-item__img">
-                                <h4 class="pricing-item__title title">Standard Plan</h4>
-                                <ul class="pricing-item__list">
-                                    <li class="pricing-item__list-item">Unlimited Bandwitch</li>
-                                    <li class="pricing-item__list-item">Encrypted Connection</li>
-                                    <li class="pricing-item__list-item">No Traffic Logs</li>
-                                    <li class="pricing-item__list-item">Works on All Devices</li>
-                                    <li class="pricing-item__list-item">Connect Anyware</li>
-                                </ul>
-                            </div>
-
-                            <div class="pricing-item-footer">
-                                <h3 class="pricing-item__price title">$9 <span> / mo</span></h3>
-                                <button class="pricing-item__btn">Select</button>
-                            </div>
-                        </li>
-                        <li class="pricing__list-item pricing-item pricing-item-special">
-                            <div class="pricing-item-content">
-                                <img src="./img/pricing/premium.svg" alt="" class="pricing-item__img">
-                                <h4 class="pricing-item__title title">Premium Plan</h4>
-                                <ul class="pricing-item__list">
-                                    <li class="pricing-item__list-item">Unlimited Bandwitch</li>
-                                    <li class="pricing-item__list-item">Encrypted Connection</li>
-                                    <li class="pricing-item__list-item">No Traffic Logs</li>
-                                    <li class="pricing-item__list-item">Works on All Devices</li>
-                                    <li class="pricing-item__list-item">Connect Anyware</li>
-                                    <li class="pricing-item__list-item">Get New Features</li>
-                                </ul>
-                            </div>
-
-                            <div class="pricing-item-footer">
-                                <h3 class="pricing-item__price title">$12 <span> / mo</span></h3>
-                                <button class="pricing-item__btn">Select</button>
-                            </div>
-                        </li>
-                    </ul>
+            <section class="pricing header-end" id="pricing">
+                <div class="pricing__wrapper">
+                    <div class="pricing__container container">
+                        <h2 class="pricing__title title">Choose Your Plan</h2>
+                        <p class="pricing__subtitle">Let's choose the package that is best for you and explore it happily
+                            and cheerfully.</p>
+                        <ul class="pricing__list">
+                            <li class="pricing__list-item pricing-item">
+                                <div class="pricing-item-content">
+                                    <img src="./img/pricing/free.svg" alt="" class="pricing-item__img">
+                                    <h4 class="pricing-item__title title">Free Plan</h4>
+                                    <ul class="pricing-item__list">
+                                        <li class="pricing-item__list-item">Unlimited Bandwitch</li>
+                                        <li class="pricing-item__list-item">Encrypted Connection</li>
+                                        <li class="pricing-item__list-item">No Traffic Logs</li>
+                                        <li class="pricing-item__list-item">Works on All Devices</li>
+                                    </ul>
+                                </div>
+                                <div class="pricing-item-footer">
+                                    <h3 class="pricing-item__price title">Free</h3>
+                                    <button class="pricing-item__btn">Select</button>
+                                </div>
+                            </li>
+                            <li class="pricing__list-item pricing-item">
+                                <div class="pricing-item-content">
+                                    <img src="./img/pricing/standard.svg" alt="" class="pricing-item__img">
+                                    <h4 class="pricing-item__title title">Standard Plan</h4>
+                                    <ul class="pricing-item__list">
+                                        <li class="pricing-item__list-item">Unlimited Bandwitch</li>
+                                        <li class="pricing-item__list-item">Encrypted Connection</li>
+                                        <li class="pricing-item__list-item">No Traffic Logs</li>
+                                        <li class="pricing-item__list-item">Works on All Devices</li>
+                                        <li class="pricing-item__list-item">Connect Anyware</li>
+                                    </ul>
+                                </div>
+                                <div class="pricing-item-footer">
+                                    <h3 class="pricing-item__price title">$9 <span> / mo</span></h3>
+                                    <button class="pricing-item__btn">Select</button>
+                                </div>
+                            </li>
+                            <li class="pricing__list-item pricing-item pricing-item-special">
+                                <div class="pricing-item-content">
+                                    <img src="./img/pricing/premium.svg" alt="" class="pricing-item__img">
+                                    <h4 class="pricing-item__title title">Premium Plan</h4>
+                                    <ul class="pricing-item__list">
+                                        <li class="pricing-item__list-item">Unlimited Bandwitch</li>
+                                        <li class="pricing-item__list-item">Encrypted Connection</li>
+                                        <li class="pricing-item__list-item">No Traffic Logs</li>
+                                        <li class="pricing-item__list-item">Works on All Devices</li>
+                                        <li class="pricing-item__list-item">Connect Anyware</li>
+                                        <li class="pricing-item__list-item">Get New Features</li>
+                                    </ul>
+                                </div>
+                                <div class="pricing-item-footer">
+                                    <h3 class="pricing-item__price title">$12 <span> / mo</span></h3>
+                                    <button class="pricing-item__btn">Select</button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </section>
 
@@ -203,7 +200,7 @@
                 </div>
             </section>
 
-            <section class="partners" id="partners">
+            <div class="partners" id="partners">
                 <div class="partners__container container">
                     <div class="partners__splide splide">
                         <div class="partners__splide-track splide__track">
@@ -237,122 +234,167 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
 
-            <section class="testimonials" id="testimonials">
+            <section class="testimonials header-end" id="testimonials">
                 <div class="testimonials__container container">
                     <h2 class="testimonials__title title">Trusted by Thousands of Happy Customer</h2>
 
                     <p class="testimonials__subtitle">These are the stories of our customers who have joined us with
                         great pleasure when using this crazy feature.</p>
 
-                    <div class="testimonials__splide splide">
-                        <div class="testimonials__splide-track splide__track">
-                            <ul class="testimonials__splide-list splide__list">
-                                <li class="testimonials__splide-slide splide__slide">
-                                    <div class="testimonials__slide-top">
-                                        <div class="testimonials__slide-img">
-                                            <img src="./img/testimonials/robert.png" alt="">
+                    <div class="testimonials__swiper swiper">
+                        <div class="testimonials__swiper-wrapper swiper-wrapper">
+                            <div class="testimonials__slide swiper-slide">
+                                <div class="testimonials__slide-wrapper slide__wrapper">
+                                    <div class="slide__wrapper-top wrapper__top">
+                                        <img class="wrapper__top-img" src="./img/testimonials/robert.png" alt="">
+
+                                        <div class="wrapper__top-info">
+                                            <p class="wrapper__top-name">Viezh Robert</p>
+                                            <p class="wrapper__top-location">Warsaw, Poland</p>
                                         </div>
-                                        <div class="testimonials__slide-info">
-                                            <p class="testimonials__slide-name">Viezh Robert</p>
-                                            <p class="testimonials__slide-location">Warsaw, Poland</p>
+
+                                        <div class="wrapper__top-rating">
+                                            <p>4.5</p>
                                         </div>
-                                        <p class="testimonials__slide-rating">4.5</p>
+
                                     </div>
 
-                                    <blockquote class="testimonials__slide-quote">Wow... I am very happy to use this
-                                        VPN, it turned out to be more than my expectations and so far there have been no
-                                        problems. LaslesVPN always the best</blockquote>
-                                </li>
-                                <li class="testimonials__splide-slide splide__slide">
-                                    <div class="testimonials__slide-top">
-                                        <div class="testimonials__slide-img">
-                                            <img src="./img/testimonials/christy.png" alt="">
+                                    <div class="slide__wrapper-blockquote">
+                                        <blockquote>
+                                            Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonials__slide swiper-slide">
+                                <div class="testimonials__slide-wrapper slide__wrapper">
+                                    <div class="slide__wrapper-top wrapper__top">
+                                        <img class="wrapper__top-img" src="./img/testimonials/christy.png" alt="">
+
+                                        <div class="wrapper__top-info">
+                                            <p class="wrapper__top-name">Yessica Christy</p>
+                                            <p class="wrapper__top-location">Shanxi, China</p>
                                         </div>
-                                        <div class="testimonials__slide-info">
-                                            <p class="testimonials__slide-name">Yessica Christy</p>
-                                            <p class="testimonials__slide-location">Shanxi, China</p>
+
+                                        <div class="wrapper__top-rating">
+                                            <p>4.5</p>
                                         </div>
-                                        <p class="testimonials__slide-rating">4.5</p>
+
                                     </div>
 
-                                    <blockquote class="testimonials__slide-quote">I like it because I like to travel far and still can connect with high speed</blockquote>
-                                </li>
-                                <li class="testimonials__splide-slide splide__slide">
-                                    <div class="testimonials__slide-top">
-                                        <div class="testimonials__slide-img">
-                                            <img src="./img/testimonials/kim.png" alt="">
+                                    <div class="slide__wrapper-blockquote">
+                                        <blockquote>
+                                            I like it because I like to travel far and still can connect with high speed.
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonials__slide swiper-slide">
+                                <div class="testimonials__slide-wrapper slide__wrapper">
+                                    <div class="slide__wrapper-top wrapper__top">
+                                        <img class="wrapper__top-img" src="./img/testimonials/kim.png" alt="">
+
+                                        <div class="wrapper__top-info">
+                                            <p class="wrapper__top-name">Kim Young Jou</p>
+                                            <p class="wrapper__top-location">Seoul, South Korea</p>
                                         </div>
-                                        <div class="testimonials__slide-info">
-                                            <p class="testimonials__slide-name">Kim Young Jou</p>
-                                            <p class="testimonials__slide-location">Seoul, South Korea</p>
+
+                                        <div class="wrapper__top-rating">
+                                            <p>4.5</p>
                                         </div>
-                                        <p class="testimonials__slide-rating">4.5</p>
+
                                     </div>
 
-                                    <blockquote class="testimonials__slide-quote">This is very unusual for my business that currently requires a virtual private network that has high security.</blockquote>
-                                </li>
-                                <li class="testimonials__splide-slide splide__slide">
-                                    <div class="testimonials__slide-top">
-                                        <div class="testimonials__slide-img">
-                                            <img src="./img/testimonials/robert.png" alt="">
+                                    <div class="slide__wrapper-blockquote">
+                                        <blockquote>
+                                            This is very unusual for my business that currently requires a virtual private network that has high security.
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonials__slide swiper-slide">
+                                <div class="testimonials__slide-wrapper slide__wrapper">
+                                    <div class="slide__wrapper-top wrapper__top">
+                                        <img class="wrapper__top-img" src="./img/testimonials/robert.png" alt="">
+
+                                        <div class="wrapper__top-info">
+                                            <p class="wrapper__top-name">Viezh Robert</p>
+                                            <p class="wrapper__top-location">Warsaw, Poland</p>
                                         </div>
-                                        <div class="testimonials__slide-info">
-                                            <p class="testimonials__slide-name">Viezh Robert</p>
-                                            <p class="testimonials__slide-location">Warsaw, Poland</p>
+
+                                        <div class="wrapper__top-rating">
+                                            <p>4.5</p>
                                         </div>
-                                        <p class="testimonials__slide-rating">4.5</p>
+
                                     </div>
 
-                                    <blockquote class="testimonials__slide-quote">Wow... I am very happy to use this
-                                        VPN, it turned out to be more than my expectations and so far there have been no
-                                        problems. LaslesVPN always the best</blockquote>
-                                </li>
-                                <li class="testimonials__splide-slide splide__slide">
-                                    <div class="testimonials__slide-top">
-                                        <div class="testimonials__slide-img">
-                                            <img src="./img/testimonials/christy.png" alt="">
+                                    <div class="slide__wrapper-blockquote">
+                                        <blockquote>
+                                            Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonials__slide swiper-slide">
+                                <div class="testimonials__slide-wrapper slide__wrapper">
+                                    <div class="slide__wrapper-top wrapper__top">
+                                        <img class="wrapper__top-img" src="./img/testimonials/christy.png" alt="">
+
+                                        <div class="wrapper__top-info">
+                                            <p class="wrapper__top-name">Yessica Christy</p>
+                                            <p class="wrapper__top-location">Shanxi, China</p>
                                         </div>
-                                        <div class="testimonials__slide-info">
-                                            <p class="testimonials__slide-name">Yessica Christy</p>
-                                            <p class="testimonials__slide-location">Shanxi, China</p>
+
+                                        <div class="wrapper__top-rating">
+                                            <p>4.5</p>
                                         </div>
-                                        <p class="testimonials__slide-rating">4.5</p>
+
                                     </div>
 
-                                    <blockquote class="testimonials__slide-quote">I like it because I like to travel far and still can connect with high speed</blockquote>
-                                </li>
-                                <li class="testimonials__splide-slide splide__slide">
-                                    <div class="testimonials__slide-top">
-                                        <div class="testimonials__slide-img">
-                                            <img src="./img/testimonials/kim.png" alt="">
+                                    <div class="slide__wrapper-blockquote">
+                                        <blockquote>
+                                            I like it because I like to travel far and still can connect with high speed.
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonials__slide swiper-slide">
+                                <div class="testimonials__slide-wrapper slide__wrapper">
+                                    <div class="slide__wrapper-top wrapper__top">
+                                        <img class="wrapper__top-img" src="./img/testimonials/kim.png" alt="">
+
+                                        <div class="wrapper__top-info">
+                                            <p class="wrapper__top-name">Kim Young Jou</p>
+                                            <p class="wrapper__top-location">Seoul, South Korea</p>
                                         </div>
-                                        <div class="testimonials__slide-info">
-                                            <p class="testimonials__slide-name">Kim Young Jou</p>
-                                            <p class="testimonials__slide-location">Seoul, South Korea</p>
+
+                                        <div class="wrapper__top-rating">
+                                            <p>4.5</p>
                                         </div>
-                                        <p class="testimonials__slide-rating">4.5</p>
+
                                     </div>
 
-                                    <blockquote class="testimonials__slide-quote">This is very unusual for my business that currently requires a virtual private network that has high security.</blockquote>
-                                </li>
-                            </ul>
+                                    <div class="slide__wrapper-blockquote">
+                                        <blockquote>
+                                            This is very unusual for my business that currently requires a virtual private network that has high security.
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                    </div>
 
+                    <div class="testimonials__swiper-control">
+                        <div class="testimonials__pagination swiper-pagination"></div>
                         
-                        <div class="splide__control">
-                            <ul class="splide__pagination">
-                                
-                            </ul>
-
-                            <div class="splide__arrows">
-                                <button class="splide__arrow splide__arrow--prev">
-                                    <img src="./img/testimonials/arrow-back.svg" alt="">
-                                </button>
-                                <button class="splide__arrow splide__arrow--next">
-                                    <img src="./img/testimonials/arrow-next.svg" alt="">
-                                </button>
+                        <div class="testimonials__swiper-buttons">
+                            <div class="testimonials__button-prev swiper-button-prev">
+                                <img src="./img/testimonials/arrow-back.svg" alt="">
+                            </div>
+                            <div class="testimonials__button-next swiper-button-next">
+                                <img src="./img/testimonials/arrow-next.svg" alt="">
                             </div>
                         </div>
                     </div>

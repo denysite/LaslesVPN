@@ -1,14 +1,18 @@
 @use "../base/vars" as *;
+@use "../base/spollers" as *;
 
 .footer {
-    padding: rem(180) 0 rem(100);
     background-color: #F8F8F8;
 
+    
     &__container {
         display: flex;
         justify-content: space-between;
         align-items: start;
-        gap: rem(15);
+        gap: rem(35);
+        
+        padding: rem(180) rem(15) 0;
+        @include adaptiveValue("padding-bottom", 100, 20);
 
         @media(max-width: $mobile) {
             flex-wrap: wrap;
@@ -28,6 +32,7 @@
     }
 
     &__img {
+        z-index: 1;
         @media(max-width: $mobile) {
             align-self: center;
         }
@@ -47,7 +52,10 @@
     }
 
     &__socials-item {
+        max-width: rem(35);
+
         img {
+            width: rem(35);
             box-shadow: 0 rem(13) rem(18) rgba(17, 19, 35, .08);
             border-radius: 50%;
             transition: box-shadow .5s ease;
@@ -66,13 +74,8 @@
     }
 
     &__right {
-        display: flex;
-        @include adaptiveValue("gap", 126, 15);
-        
-        @media(max-width: $mobile) {
-            justify-content: space-evenly;
-            width: 100%;
-        }
+        max-width: 100%;
+        width: 100%;
     }
 
     &__right-list {

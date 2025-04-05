@@ -1,0 +1,72 @@
+@use "./vars" as *;
+
+// Базовые стили спойлеров
+// Сниппет (HTML): spoller
+
+// Блок со спойлерами
+.spollers {
+	text-align: center;
+	gap: rem(15);
+	@media(max-width: $mobile) {
+		display: grid;
+		justify-content: center;
+	}
+
+	@media(min-width: $mobile) {
+		display: flex;
+		justify-content: end;
+		@include adaptiveValue("gap", 126, 15, 1170, 768);
+	}
+}
+
+// Спойлер
+.spollers__item {
+	font-size: rem(20);
+}
+
+// Заголовок спойлера
+.spollers__title {
+	cursor: default;
+	text-align: center;
+	position: relative;
+
+	._spoller-init & {
+		padding-right: rem(32);
+		cursor: pointer;
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			right: 0;
+			top: 50%;
+			background-color: #000;
+			height: rem(2);
+			width: rem(15);
+			transition: transform 0.5s ease 0s;
+		}
+
+		&::before {
+			transform: translate(-75%, -50%) rotate(40deg);
+		}
+
+		&::after {
+			transform: translate(-5%, -50%) rotate(-40deg);
+		}
+
+		&._spoller-active {
+			&::before {
+				transform: translateX(-75%) rotate(-40deg);
+			}
+
+			&::after {
+				transform: translateX(-6%) rotate(40deg);
+			}
+		}
+	}
+}
+
+// Контент спойлера
+.spollers__body {
+	text-align: center;
+}
